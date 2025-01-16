@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checks.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpatin <lpatin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 21:43:45 by lpatin            #+#    #+#             */
-/*   Updated: 2025/01/10 08:42:12 by lpatin           ###   ########.fr       */
+/*   Updated: 2025/01/16 01:07:00 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,16 @@ int	ft_check(char **args, int nb_args)
 		i++;
 	}
 	return (0);
+}
+
+int	compare_numbers(char *str1, char *str2)
+{
+	long	num1;
+	long	num2;
+
+	num1 = ft_atoi(str1);
+	num2 = ft_atoi(str2);
+	return (num1 == num2);
 }
 
 int	is_valid(char *arg)
