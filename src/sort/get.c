@@ -48,7 +48,7 @@ int	get_max(t_stack *stack)
 	return (max);
 }
 
-int	get_pos(t_stack *stack, int value)
+int	get_pos_el(t_stack *stack, int value)
 {
 	t_stack	*tmp;
 	int		i;
@@ -69,4 +69,42 @@ int	get_pos(t_stack *stack, int value)
 	return (i);
 }
 
-int	get_best_move()
+int	get_pos_place(t_stack *stack, int value)
+{
+	t_stack	*tmp;
+	int		i;
+
+	i = 0;
+	if (value > get_max(stack) || value < get_min(stack))
+		return (get_pos_el(stack, get_min(stack)));
+	tmp = stack->next;
+	while (i < stack_length(stack))
+	{
+		if (tmp->previous->value < value && value < tmp->value)
+			return (i);
+		tmp = tmp->next;
+		i++;
+	}
+	return (0);
+}
+
+int	get_best_move(t_stack *stack_a, t_stack *stack_b, t_cost *cost)
+{
+	int		best_move_elem;
+	t_stack	*tmp;
+
+	best_move_elem = stack_b->value;
+	cost->best = count_move(stack_a, stack_b, best_move_elem);
+	tmp = stack_b->next;
+	while (tmp != stack_b)
+	{
+		cost->total = count_move(stack_a, stack_b, tmp->value);
+		if (cost->total < cost->best)
+		{
+			cost->best = cost->total;
+			best_move_elem = tmp->value;
+		}
+		tmp = tmp->next;
+	}
+	return (best_move_elem);
+}
