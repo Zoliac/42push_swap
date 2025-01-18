@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 18:50:07 by lpatin            #+#    #+#             */
-/*   Updated: 2025/01/16 02:55:25 by marvin           ###   ########.fr       */
+/*   Updated: 2025/01/18 19:05:31 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static char 	**handle_args(int argc, char **argv, int *size)
 
 	if(argc == 2)
 	{
-		args - ft_split(argv[1], ' ');
+		args = ft_split(argv[1], ' ');
 		if (!args)
 			return (NULL);
 		*size = 0;
@@ -61,7 +61,7 @@ int	main(int argc, char **argv)
 	init_stacks(args, size, &stack_a);
 	needfree(args, size);
 	if(is_sorted(&stack_a, size) == 0)
-		return (free_stack(&stack_a), free_array(tab), 0);
+		return (free_stacks(&stack_a), free_array(tab), 0);
 	push_swap(tab, size, &stack_a, &stack_b);
 	return (0);
 }

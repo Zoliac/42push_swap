@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpatin <lpatin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 14:28:00 by lpatin            #+#    #+#             */
-/*   Updated: 2024/12/06 18:42:59 by lpatin           ###   ########.fr       */
+/*   Updated: 2025/01/18 19:23:50 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ static int	countwords(const char *s, char c)
 	return (count);
 }
 
-static void	*needfree(char **result, int i)
+void	needfree(char **result, int i)
 {
 	while (i-- > 0)
 		free(result[i]);
 	free(result);
-	return (NULL);
+	return ;
 }
 
 static char	*next_word(const char *s, char c, int *start)
@@ -70,7 +70,7 @@ char	**ft_split(char const *s, char c)
 			start++;
 		result[i] = next_word(s, c, &start);
 		if (!result[i++])
-			return (needfree(result, i - 1));
+			needfree(result, i - 1);
 	}
 	result[i] = 0;
 	return (result);

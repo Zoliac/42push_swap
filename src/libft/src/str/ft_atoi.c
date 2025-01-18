@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 17:45:20 by lpatin            #+#    #+#             */
-/*   Updated: 2025/01/16 02:39:07 by marvin           ###   ########.fr       */
+/*   Updated: 2025/01/18 19:47:10 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,19 @@ int	ft_atoi(const char *nptr)
 	i = 0;
 	nbr = 0;
 	sign = 1;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
-		|| str[i] == '\r' || str[i] == '\f' || str[i] == '\v')
+	while (nptr[i] == ' ' || nptr[i] == '\t' || nptr[i] == '\n'
+		|| nptr[i] == '\r' || nptr[i] == '\f' || nptr[i] == '\v')
 		i++;
-	if (str[i] == '-')
+	if (nptr[i] == '-')
 	{
 		sign = -1;
 		i++;
 	}
-	else if (str[i] == '+')
+	else if (nptr[i] == '+')
 		i++;
-	while (str[i] <= '9' && str[i] >= '0')
+	while (nptr[i] <= '9' && nptr[i] >= '0')
 	{
-		nbr = nbr * 10 + str[i] - '0';
+		nbr = nbr * 10 + nptr[i] - '0';
 		i++;
 	}
 	return (nbr * sign);

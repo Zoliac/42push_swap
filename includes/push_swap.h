@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 17:21:17 by lpatin            #+#    #+#             */
-/*   Updated: 2025/01/16 02:55:15 by marvin           ###   ########.fr       */
+/*   Updated: 2025/01/18 19:31:08 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,11 +97,12 @@ void			turk_sort(t_stack **a, t_stack **b, t_cost *cost);
 void			ft_stack_add_front(t_stack **lst, t_stack *new);
 void			case_three(t_stack **stack);
 void			case_two(t_stack **stack);
-t_chunk			*create_chunk(int *tab, int size);
 void			free_stacks(t_stack **stack);
 void			free_array(int *tab);
 void			free_chunk(t_chunk *chunk);
 void			free_all(t_stack **stack, int *tab, t_chunk *chunk);
+void			needfree(char **result, int i); 
+t_chunk			*create_chunk(int *tab, int size);
 int				stack_length(t_stack *stack);
 
 #endif

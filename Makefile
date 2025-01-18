@@ -10,7 +10,7 @@ LIB_DIR = src/libft
 FT = parsing/arrays parsing/checks parsing/stacks parsing/verif_sort \
 	rules/push rules/reverse_rot rules/rotate rules/swap \
 	sort/chunk_sort sort/chunk_utils sort/get sort/push_swap sort/turk_sort \
-	utils/add_on_front utils/cases utils/chunk_utils utils/free_all utils/stack_length \
+	utils/add_on_front utils/cases utils/free_all utils/stack_length \
 	main
 
 SOURCES = $(addprefix $(SRC_DIR)/, $(addsuffix .c, $(FT)))
