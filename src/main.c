@@ -6,11 +6,39 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 18:50:07 by lpatin            #+#    #+#             */
-/*   Updated: 2025/01/15 22:54:44 by marvin           ###   ########.fr       */
+/*   Updated: 2025/01/16 02:55:25 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+static char 	**handle_args(int argc, char **argv, int *size)
+{
+	char	**args;
+	int		i;
+
+	if(argc == 2)
+	{
+		args - ft_split(argv[1], ' ');
+		if (!args)
+			return (NULL);
+		*size = 0;
+		while (args[*size])
+			(*size)++;
+	}
+	else
+	{
+		*size = argc - 1;
+		args = malloc(sizeof(char *) * (*size + 1));
+		if (!args)
+			return (NULL);
+		i = -1;
+		while (++i < *size)
+			args[i] = ft_strdup(argv[i + 1]);
+		args[i] = NULL;
+	}
+	return (args);
+}
 
 int	main(int argc, char **argv)
 {

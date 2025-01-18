@@ -107,7 +107,7 @@ void	turk_sort(t_stack **a, t_stack **b, t_cost *cost)
 	while (*b)
 	{
 		best = get_best_move(*a, *b, cost);
-`		rotate_and_push(a, b, best);
+		rotate_and_push(a, b, best);
 	}
 	b = NULL;
 }

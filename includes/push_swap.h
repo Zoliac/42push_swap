@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpatin <lpatin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 17:21:17 by lpatin            #+#    #+#             */
-/*   Updated: 2025/01/10 08:41:47 by lpatin           ###   ########.fr       */
+/*   Updated: 2025/01/16 02:55:15 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include "../libft/includes/libft.h"
+#include "../src/libft/includes/libft.h"
 
 typedef struct s_stack
 {
@@ -41,36 +41,67 @@ typedef struct s_chunk
 
 //Parsing Functions
 
-void		ft_swap(int *a, int *b);
-void		ft_quick_sort(int *tab, int start, int end);
-void		ft_free_stack(t_stack **stack);
-void		ft_stack_add_back(t_stack **stack, t_stack *new);
-int			is_sorted(t_stack **stack, int nbr_of_args);
-int			*ft_init_array(char **args, int nb_of_args);
-int			check_overflows(char *str);
-int			ft_cut(int *tab, int start, int end);
-int			ft_check(char **args, int nb_args);
-int			is_valid(char *arg);
-int			checker_arg(char **args, int nb_args);
-static char	**handle_args(int argc, char **argv, int *size);
-t_stack		*init_stacks(int **args, int nb_args, t_stack **stack_a);
-t_stack 	*ft_new_node(int value);
-
-//Algorithm functions
-
-void		push_swap(int *tab, int size, t_stack **stack_a, t_stack **stack_b);
+void			ft_swap(int *a, int *b);
+int				ft_cut(int *tab, int start, int end);
+void			ft_quick_sort(int *tab, int start, int end);
+int				*ft_init_array(char **args, int nb_of_args);
+int				check_overflows(char *str);
+int				ft_check(char **args, int nb_args);
+int				is_valid(char *arg);
+int				checker_arg(char **args, int nb_args);
+void			ft_stack_add_back(t_stack **stack, t_stack *new);
+int				compare_numbers(char *str1, char *str2);
+void			ft_free_stack(t_stack **stack);
+t_stack 		*ft_new_node(int value);
+t_stack			*init_stacks(char **args, int nb_args, t_stack **stack_a);
+int				is_sorted(t_stack **stack, int nbr_of_args);
 
 //Rules
 
-void		push_a(t_stack **stack_a, t_stack **stack_b);
+void			push_b(t_stack **stack_a, t_stack **stack_b);
+void			push_a(t_stack **stack_a, t_stack **stack_b);
+void			reverse_rotate(t_stack **stack);
+void			reverse_rotate_a(t_stack **stack_a);
+void 			reverse_rotate_b(t_stack **stack_b);
+void			reverse_rotate_r(t_stack **stack_a, t_stack **stack_b);
+void			rotate(t_stack **stack);
+void			rotate_a(t_stack **stack_a);
+void			rotate_b(t_stack	**stack_b);
+void			rotate_r(t_stack	**stack_a, t_stack	**stack_b);
+void			swap(t_stack **top);
+void			swap_a(t_stack **stack_a);
+void			swap_b(t_stack **stack_b);
+void			swap_s(t_stack **stack_a, t_stack **stack_b);
+
+//Algorithm functions
+
+int				value_in_chunk(t_chunk *chunk, t_stack **stack);
+int				move(t_chunk *chunk, t_stack *elem);
+void			update_chunk(t_chunk *chunk, t_stack **stack);
+void			chunk_sort(t_chunk *chunk, t_stack **stack_a, t_stack **stack_b);
+int				cst_set_chunk(int size);
+t_chunk			*create_chunk(int *tab, int size);
+int				get_min(t_stack *stack);
+int				get_max(t_stack *stack);
+int				get_pos_el(t_stack *stack, int value);
+int				get_pos_place(t_stack *stack, int value);
+int				get_best_move(t_stack *stack_a, t_stack *stack_b, t_cost *cost);
+void			push_swap(int *tab, int size, t_stack **stack_a, t_stack **stack_b);
+int				count_move(t_stack *stack_a, t_stack *stack_b, int elem);
+int				opti_rotate(t_stack **a, t_stack **b, int pos_a, int pos_b);
+void			rotate_and_push(t_stack **stack_a, t_stack **stack_b, int element);
+void			turk_sort(t_stack **a, t_stack **b, t_cost *cost);
 
 //Utils
 
-void		free_stacks(t_stack **stack);
-void		free_array(int *tab);
-void		free_chunk(t_chunk *chunk);
-void		ft_stack_add_front(t_stack **lst, t_stack *new);
-void		free_all(t_stack **stack, int *tab, t_chunk *chunk);
-t_chunk		*ft_create_chunk(int *tab, int size);
+void			ft_stack_add_front(t_stack **lst, t_stack *new);
+void			case_three(t_stack **stack);
+void			case_two(t_stack **stack);
+t_chunk			*create_chunk(int *tab, int size);
+void			free_stacks(t_stack **stack);
+void			free_array(int *tab);
+void			free_chunk(t_chunk *chunk);
+void			free_all(t_stack **stack, int *tab, t_chunk *chunk);
+int				stack_length(t_stack *stack);
 
 #endif

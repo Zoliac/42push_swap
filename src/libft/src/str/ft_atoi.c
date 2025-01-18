@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpatin <lpatin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 17:45:20 by lpatin            #+#    #+#             */
-/*   Updated: 2024/10/29 14:01:29 by lpatin           ###   ########.fr       */
+/*   Updated: 2025/01/16 02:39:07 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,29 @@
 
 int	ft_atoi(const char *nptr)
 {
-	int		i;
-	int		sign;
-	long	temp;
+	int	i;
+	int	nbr;
+	int	sign;
 
 	i = 0;
+	nbr = 0;
 	sign = 1;
-	temp = 0;
-	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == ' ')
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
+		|| str[i] == '\r' || str[i] == '\f' || str[i] == '\v')
 		i++;
-	if (nptr[i] == '-' || nptr[i] == '+')
+	if (str[i] == '-')
 	{
-		sign -= (nptr[i] == '-') * 2;
+		sign = -1;
 		i++;
 	}
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-		temp = temp * 10 + (nptr[i++] - '0');
-	return (temp * sign);
+	else if (str[i] == '+')
+		i++;
+	while (str[i] <= '9' && str[i] >= '0')
+	{
+		nbr = nbr * 10 + str[i] - '0';
+		i++;
+	}
+	return (nbr * sign);
 }
 
 /*#include <stdio.h>

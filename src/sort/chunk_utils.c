@@ -20,9 +20,9 @@ int	cst_set_chunk(int size)
 		return (8);
 }
 
-t_chunk	create_chunk(int *tab, int size)
+t_chunk	*create_chunk(int *tab, int size)
 {
-	t_chunk	chunk;
+	t_chunk	*chunk;
 
 	chunk = malloc(sizeof(t_chunk));
 	if (chunk == NULL)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpatin <lpatin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 15:32:38 by lpatin            #+#    #+#             */
-/*   Updated: 2024/12/06 17:43:04 by lpatin           ###   ########.fr       */
+/*   Updated: 2025/01/16 02:55:20 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,6 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 int		ft_printf(const char *format, ...);
 char	*get_next_line(int fd);
+int		ft_isspace(int c);
 
 #endif

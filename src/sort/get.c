@@ -15,7 +15,7 @@
 int	get_min(t_stack *stack)
 {
 	int		min;
-	t_stack	*temp;
+	t_stack	*tmp;
 
 	if (!stack)
 		return (0);
@@ -33,7 +33,7 @@ int	get_min(t_stack *stack)
 int	get_max(t_stack *stack)
 {
 	int		max;
-	t_stack	*temp;
+	t_stack	*tmp;
 
 	if (!stack)
 		return (0);
@@ -80,7 +80,7 @@ int	get_pos_place(t_stack *stack, int value)
 	tmp = stack->next;
 	while (i < stack_length(stack))
 	{
-		if (tmp->previous->value < value && value < tmp->value)
+		if (tmp->prev->value < value && value < tmp->value)
 			return (i);
 		tmp = tmp->next;
 		i++;

@@ -12,6 +12,31 @@
 
 #include "../../includes/push_swap.h"
 
+int	value_in_chunk(t_chunk *chunk, t_stack **stack)
+{
+	t_stack	*tmp;
+	int		i;
+	int		j;
+
+	j = 0;
+	if (!*stack)
+		return (0);
+	tmp = *stack;
+	while (j < chunk->total_size)
+	{
+		i = chunk->start;
+		while (i < chunk->end)
+		{
+			if (tmp->value == chunk->values[i])
+				return (1);
+			i++;
+		}
+		tmp = tmp->next;
+		j++;
+	}
+	return (0);
+}
+
 int	move(t_chunk *chunk, t_stack *elem)
 {
 	int	i;
@@ -59,7 +84,7 @@ void	chunk_sort(t_chunk *chunk, t_stack **stack_a, t_stack **stack_b)
 		test = move(chunk, elem);
 		if (test == 1)
 			push_b(stack_a, stack_b);
-		else
+		else if (test == -1)
 		{
 			push_b(stack_a, stack_b);
 			rotate_b(stack_b);

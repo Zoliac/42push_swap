@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 22:40:36 by lpatin            #+#    #+#             */
-/*   Updated: 2025/01/16 01:57:27 by marvin           ###   ########.fr       */
+/*   Updated: 2025/01/16 02:56:11 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 void	push_swap(int *tab, int size, t_stack **stack_a, t_stack **stack_b)
 {
 	t_chunk	*chunk;
-	t_cost	cost;
+	t_cost	*cost;
 
-	chunk = ft_create_chunk(tab, size);
+	chunk = create_chunk(tab, size);
 	if (chunk == NULL)
 		return ;
 	chunk_sort(chunk, stack_a, stack_b);
@@ -27,13 +27,13 @@ void	push_swap(int *tab, int size, t_stack **stack_a, t_stack **stack_b)
 	if (cost == NULL)
 		return ;
 	turk_sort(stack_a, stack_b, cost);
-	while ((*a)->value != get_min(*a))
+	while ((*stack_a)->value != get_min(*stack_a))
 	{
-		if (get_pos_el(*a, get_min(*a)) <= stack_length(*a) / 2)
-			rotate_a(a);
+		if (get_pos_el(*stack_a, get_min(*stack_a)) <= stack_length(*stack_a) / 2)
+			rotate_a(stack_a);
 		else
-			reverse_rotate_a(a);
+			reverse_rotate_a(stack_a);
 	}
-	free(cost)
+	free(cost);
 	free_all(stack_a, tab, chunk);
 }

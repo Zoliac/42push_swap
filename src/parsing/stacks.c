@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stacks.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpatin <lpatin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 15:50:05 by lpatin            #+#    #+#             */
-/*   Updated: 2025/01/10 08:42:18 by lpatin           ###   ########.fr       */
+/*   Updated: 2025/01/16 02:55:28 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ t_stack *ft_new_node(int value)
 	return (node);
 }
 
-t_stack	*init_stacks(int **args, int nb_args, t_stack **stack_a)
+t_stack	*init_stacks(char **args, int nb_args, t_stack **stack_a)
 {
 	t_stack	*node;
 	t_stack	*first;
