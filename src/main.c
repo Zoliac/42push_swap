@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lpatin <lpatin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 18:50:07 by lpatin            #+#    #+#             */
-/*   Updated: 2025/01/18 19:05:31 by marvin           ###   ########.fr       */
+/*   Updated: 2025/01/21 18:58:52 by lpatin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-static char 	**handle_args(int argc, char **argv, int *size)
+static char	**handle_args(int argc, char **argv, int *size)
 {
 	char	**args;
 	int		i;
 
-	if(argc == 2)
+	if (argc == 2)
 	{
 		args = ft_split(argv[1], ' ');
 		if (!args)
@@ -42,8 +42,8 @@ static char 	**handle_args(int argc, char **argv, int *size)
 
 int	main(int argc, char **argv)
 {
-	t_stack *stack_a;
-	t_stack *stack_b;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
 	char	**args;
 	int		size;
 	int		*tab;
@@ -60,7 +60,7 @@ int	main(int argc, char **argv)
 	tab = ft_init_array(args, size);
 	init_stacks(args, size, &stack_a);
 	needfree(args, size);
-	if(is_sorted(&stack_a, size) == 0)
+	if (is_sorted(&stack_a, size) == 0)
 		return (free_stacks(&stack_a), free_array(tab), 0);
 	push_swap(tab, size, &stack_a, &stack_b);
 	return (0);

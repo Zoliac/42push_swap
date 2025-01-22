@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   stacks.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lpatin <lpatin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 15:50:05 by lpatin            #+#    #+#             */
-/*   Updated: 2025/01/16 02:55:28 by marvin           ###   ########.fr       */
+/*   Updated: 2025/01/21 19:00:53 by lpatin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void ft_stack_add_back(t_stack **stack, t_stack *new)
+void	ft_stack_add_back(t_stack **stack, t_stack *new)
 {
 	t_stack	*pos;
 
@@ -30,7 +30,7 @@ void ft_stack_add_back(t_stack **stack, t_stack *new)
 	new -> prev = pos;
 }
 
-t_stack *ft_new_node(int value)
+t_stack	*ft_new_node(int value)
 {
 	t_stack	*node;
 

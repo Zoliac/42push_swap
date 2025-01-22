@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checks.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lpatin <lpatin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 21:43:45 by lpatin            #+#    #+#             */
-/*   Updated: 2025/01/16 02:55:20 by marvin           ###   ########.fr       */
+/*   Updated: 2025/01/21 19:00:26 by lpatin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int	compare_numbers(char *str1, char *str2)
 
 int	is_valid(char *arg)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!arg[i])
@@ -91,7 +91,7 @@ int	is_valid(char *arg)
 
 int	checker_arg(char **args, int nb_args)
 {
-	int check;
+	int	check;
 
 	if (nb_args < 2 && is_valid(args[0]) == 0)
 		return (ft_putstr_fd("Error\n", 2), 0);

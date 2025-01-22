@@ -6,7 +6,7 @@
 /*   By: lpatin <lpatin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 04:57:53 by lpatin            #+#    #+#             */
-/*   Updated: 2025/01/13 19:29:38 by lpatin           ###   ########.fr       */
+/*   Updated: 2025/01/21 19:02:05 by lpatin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 
 void	reverse_rotate(t_stack **stack)
 {
-	if(!stack || !*stack || (*stack)->next == *stack)
+	if (!stack || !*stack || (*stack)->next == *stack)
 		return ;
 	*stack = (*stack)->prev;
 }
 
 void	reverse_rotate_a(t_stack **stack_a)
 {
-	if(!stack_a || !*stack_a)
+	if (!stack_a || !*stack_a)
 		return ;
 	reverse_rotate(stack_a);
 	ft_printf("rra\n");
 }
 
-void 	reverse_rotate_b(t_stack **stack_b)
+void	reverse_rotate_b(t_stack **stack_b)
 {
 	if (!stack_b || !*stack_b)
 		return ;

@@ -6,7 +6,7 @@
 /*   By: lpatin <lpatin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 04:57:40 by lpatin            #+#    #+#             */
-/*   Updated: 2025/01/13 19:23:03 by lpatin           ###   ########.fr       */
+/*   Updated: 2025/01/21 19:01:26 by lpatin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	push_a(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*node;
-	
+
 	if (!*stack_b || !stack_b)
 		return ;
 	node = *stack_b;
@@ -34,11 +34,12 @@ void	push_a(t_stack **stack_a, t_stack **stack_b)
 	}
 	else
 		ft_stack_add_front(stack_a, node);
+	ft_printf("pa\n");
 }
 
 void	push_b(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack *node;
+	t_stack	*node;
 
 	if (!*stack_a || !stack_a)
 		return ;

@@ -14,7 +14,7 @@
 
 int	cst_set_chunk(int size)
 {
-	if (size <=200)
+	if (size <= 200)
 		return (4);
 	else
 		return (8);

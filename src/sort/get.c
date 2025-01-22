@@ -57,8 +57,8 @@ int	get_pos_el(t_stack *stack, int value)
 		return (0);
 	if (stack->value == value)
 		return (0);
-	tmp = stack->next;
 	i = 1;
+	tmp = stack->next;
 	while (tmp != stack)
 	{
 		if (tmp->value == value)
@@ -77,7 +77,7 @@ int	get_pos_place(t_stack *stack, int value)
 	i = 0;
 	if (value > get_max(stack) || value < get_min(stack))
 		return (get_pos_el(stack, get_min(stack)));
-	tmp = stack->next;
+	tmp = stack;
 	while (i < stack_length(stack))
 	{
 		if (tmp->prev->value < value && value < tmp->value)

@@ -44,12 +44,12 @@ int	move(t_chunk *chunk, t_stack *elem)
 	i = chunk->start;
 	while (i <= chunk->end)
 	{
-		if(chunk->values[i] == elem->value)
+		if (chunk->values[i] == elem->value)
 		{
 			if (i < chunk->middle)
+				return (-1);
+			else if (i >= chunk->middle)
 				return (1);
-			else
-				return (0);
 		}
 		i++;
 	}

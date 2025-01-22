@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   arrays.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lpatin <lpatin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 15:39:22 by lpatin            #+#    #+#             */
-/*   Updated: 2025/01/16 02:55:26 by marvin           ###   ########.fr       */
+/*   Updated: 2025/01/21 18:59:28 by lpatin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ft_quick_sort(int *tab, int start, int end)
 {
 	int	pivot;
 
-	if(start < end)
+	if (start < end)
 	{
 		pivot = ft_cut(tab, start, end);
 		ft_quick_sort(tab, start, pivot - 1);
@@ -55,7 +55,7 @@ void	ft_quick_sort(int *tab, int start, int end)
 	}
 }
 
-int *ft_init_array(char **args, int nb_of_args)
+int	*ft_init_array(char **args, int nb_of_args)
 {
 	int	*tab;
 	int	i;
